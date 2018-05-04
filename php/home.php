@@ -28,19 +28,23 @@
 				<tbody>
 					<?php
 					  $x = retornaClientes();
-					  echo "</br>";
 					  foreach ($x as $y) {
 					?>
 					<tr>
 						<td><?php echo $y['nome']; ?></td>
 						<td><?php echo $y['tipo_plano']; ?></td>
 						<td>
-						  <a href="exclui_cliente.php?id=<?php echo $y['id']; ?>">
+						  <a href="../php/visualiza_cliente.php?id=<?php echo $y['id']; ?>">
+							<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						  </a>
+						</td>
+						<td>
+						  <a href="../php/exclui_cliente.php?id=<?php echo $y['id']; ?>">
 							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						  </a>
 						</td>
 						<td>
-						  <a href="atualiza_cliente.php?id=<?php echo $y['id']; ?>">
+						  <a href="../php/atualiza_cliente.php?id=<?php echo $y['id']; ?>">
 							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						  </a>
 						</td>
