@@ -8,7 +8,8 @@ include_once "DAO/login.php";
   if(count($usuario) == 1 &&
     $user == $usuario['0']['usuario'] && $psw == $usuario['0']['senha']){
     $_SESSION['user'] = $user;
-    $_SESSION['logado']= $psw;
+    $_SESSION['senha']= $psw;
+    $_SESSION['logado']= true;
     header('location:home.php');
   }else {
     header('location:../html/index.html');

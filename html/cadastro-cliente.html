@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro de Cliente</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<div class="container">
+    <div class="panel panel-info ">
+      <div class="panel-heading ">
+        <h1 class="panel-title">Cadastro de Cliente</h1>
+      </div>
+      <form class>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">
+          </div>
+          <div class="form-group col-md-6">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="local-nascimento">Local de Nascimento</label>
+            <input type="text" class="form-control" name="local-nascimento" id="local-nascimento" placeholder="Local de Nascimento">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="Data de Nascimento">Data de Nascimento</label>
+            <input type="date" class="form-control" name="data-nascimento" id="data-nascimento" placeholder="">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="Sexo">Sexo</label>
+            <select id="sexo" name="sexo" class="form-control">
+              <option selected>Choose...</option>
+              <option>Female</option>
+              <option>Male</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group col-md-12">
+          <label for="endereco">Endereço</label>
+          <input type="text" class="form-control" name="endereco" id="endereco" placeholder="1234 Main St">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="telefone">Telefone</label>
+            <input type="text" class="form-control" name ="telefone" id="telefone" placeholder="(DD) 9999-9999">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="empresa">Empresa</label>
+            <input type="tetext" id="empresa" name="empresa" placeholder = "Empresa" class="form-control">
+          </div>
+        </div>
+
+        <div class="form-row form-group col-md-12">
+          <label for="plano-escolhido">Plano Escolhido</label>
+          <select id="plano-escolhido" name="plano-escolhido" class="form-control">
+            <option value="3">Max Privativo</option>
+            <option value="2">Max Semi-Privativo</option>
+            <option value="1">Max Part</option>
+          </select>
+        </div>
+
+        <div class="form-row col-md-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+  </div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
