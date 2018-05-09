@@ -1,5 +1,23 @@
 <?php
 include_once 'conexao.php';
+
+
+function insereCliente($nome,$sexo,$email,$telefone,$dt_nasc,$loc_nasc, $endereco, $empresa, $tipo_plano){
+  $connection = cria_conexao();
+  $sql = "INSERT INTO cliente (`nome`, `sexo`, `email`, `telefone`, `data_nascimento`, `local_nascimento`, `endereco`, `empresa`, `tipo_plano`) VALUES ('$nome','$sexo', '$email', '$telefone', '$dt_nasc', '$loc_nasc', '$endereco', '$empresa', '$tipo_plano')";
+  try {
+    if(mysqli_query($connection, $sql)){
+      $retorno = true;
+    }else{
+      $retorno = false;
+    }
+    mysqli_close($connection);
+    return $retorno;
+  } catch (\Exception $e) {
+    echo $e->getMessage();
+  }
+}
+
 function retornaClientes(){
   $connection = cria_conexao();
   $sql = "SELECT a.*, planos.tipo_plano FROM cliente a INNER JOIN planos ON planos.id = a.tipo_plano ORDER BY nome ASC";
@@ -18,9 +36,9 @@ function retornaClientes(){
 
 function retornaCliente($id_cliente){
 	$connection = cria_conexao();
-	
+
 	$sql = "SELECT a.nome, a.sexo, a.email, a.telefone, a.data_nascimento, a.local_nascimento, a.endereco, a.empresa, b.tipo_plano FROM cliente a INNER JOIN planos b ON a.tipo_plano = b.id where a.id = '".$id_cliente."' ORDER BY a.nome";
-	
+
 	try {
     $resultado = mysqli_query($connection, $sql);
     $alunos = array();
@@ -36,9 +54,9 @@ function retornaCliente($id_cliente){
 
 function retornaDependentes($id_cliente){
 	$connection = cria_conexao();
-		
+
 	$sql = "SELECT dependentes.nome, parentescos.descricao FROM cliente INNER JOIN dependentes ON cliente.id = dependentes.titular INNER JOIN parentescos ON dependentes.parentesco = parentescos.id WHERE cliente.id = '".$id_cliente."'";
-	
+
 	try {
     $resultado = mysqli_query($connection, $sql);
     $alunos = array();
