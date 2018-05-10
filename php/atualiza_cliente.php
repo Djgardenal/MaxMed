@@ -67,7 +67,7 @@
 					</div>
 					<div class="form-group col-md-6">
 						<label for="empresa">Empresa</label>
-						<input type="tetext" id="empresa" name="empresa" class="form-control" value="<?php echo $y['empresa']; ?>">
+						<input type="text" id="empresa" name="empresa" class="form-control" value="<?php echo $y['empresa']; ?>">
 					</div>
 				</div>
 
