@@ -58,7 +58,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		</div>
 		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-		<a href="adiciona_cliente.html">Adicionar Cliente</a>
+		<a href="../html/cadastro-cliente.html">Adicionar Cliente</a>
 	</div>
   </body>
 </html>

@@ -18,9 +18,9 @@ function retornaClientes(){
 
 function retornaCliente($id_cliente){
 	$connection = cria_conexao();
-	
+
 	$sql = "SELECT a.nome, a.sexo, a.email, a.telefone, a.data_nascimento, a.local_nascimento, a.endereco, a.empresa, b.tipo_plano FROM cliente a INNER JOIN planos b ON a.tipo_plano = b.id where a.id = '".$id_cliente."' ORDER BY a.nome";
-	
+
 	try {
     $resultado = mysqli_query($connection, $sql);
     $alunos = array();
@@ -36,9 +36,9 @@ function retornaCliente($id_cliente){
 
 function retornaDependentes($id_cliente){
 	$connection = cria_conexao();
-		
+
 	$sql = "SELECT dependentes.nome, parentescos.descricao FROM cliente INNER JOIN dependentes ON cliente.id = dependentes.titular INNER JOIN parentescos ON dependentes.parentesco = parentescos.id WHERE cliente.id = '".$id_cliente."'";
-	
+
 	try {
     $resultado = mysqli_query($connection, $sql);
     $alunos = array();
@@ -62,6 +62,18 @@ function exclui_cliente($id_cliente) {
   } else {
     return false;
   }
+}
+
+function atualiza_cliente($id_cliente, $endereco_cliente, $telefone_cliente, $empresa_cliente, $email_cliente) {
+	$connection = cria_conexao();
+
+	$sql = "update cliente set endereco = '".$endereco_cliente."', telefone = '".$telefone_cliente."', empresa = '".$empresa_cliente."', email = '".$email_cliente."' where id ='".$id_cliente."'";
+
+	if (mysqli_query($connection, $sql)) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 
