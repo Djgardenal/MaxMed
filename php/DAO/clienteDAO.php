@@ -1,5 +1,23 @@
 <?php
 include_once 'conexao.php';
+
+
+function insereCliente($nome,$sexo,$email,$telefone,$dt_nasc,$loc_nasc, $endereco, $empresa, $tipo_plano){
+  $connection = cria_conexao();
+  $sql = "INSERT INTO cliente (`nome`, `sexo`, `email`, `telefone`, `data_nascimento`, `local_nascimento`, `endereco`, `empresa`, `tipo_plano`) VALUES ('$nome','$sexo', '$email', '$telefone', '$dt_nasc', '$loc_nasc', '$endereco', '$empresa', '$tipo_plano')";
+  try {
+    if(mysqli_query($connection, $sql)){
+      $retorno = true;
+    }else{
+      $retorno = false;
+    }
+    mysqli_close($connection);
+    return $retorno;
+  } catch (\Exception $e) {
+    echo $e->getMessage();
+  }
+}
+
 function retornaClientes(){
   $connection = cria_conexao();
   $sql = "SELECT a.*, planos.tipo_plano FROM cliente a INNER JOIN planos ON planos.id = a.tipo_plano ORDER BY nome ASC";

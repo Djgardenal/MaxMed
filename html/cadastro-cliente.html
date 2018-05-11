@@ -23,7 +23,7 @@
       <div class="panel-heading ">
         <h1 class="panel-title">Cadastro de Cliente</h1>
       </div>
-      <form class>
+      <form action="../php/cadastro-cliente.php" method="post">
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="nome">Nome</label>
@@ -48,8 +48,8 @@
             <label for="Sexo">Sexo</label>
             <select id="sexo" name="sexo" class="form-control">
               <option selected>Choose...</option>
-              <option>Female</option>
-              <option>Male</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
             </select>
           </div>
         </div>
@@ -80,7 +80,7 @@
         </div>
 
         <div class="form-row col-md-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary">Cadastrar</button>
         </div>
       </form>
   </div>
