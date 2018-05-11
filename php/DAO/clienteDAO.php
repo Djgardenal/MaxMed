@@ -82,5 +82,17 @@ function exclui_cliente($id_cliente) {
   }
 }
 
+function atualiza_cliente($id_cliente, $endereco_cliente, $telefone_cliente, $empresa_cliente, $email_cliente) {
+	$connection = cria_conexao();
+
+	$sql = "update cliente set endereco = '".$endereco_cliente."', telefone = '".$telefone_cliente."', empresa = '".$empresa_cliente."', email = '".$email_cliente."' where id ='".$id_cliente."'";
+
+	if (mysqli_query($connection, $sql)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 
 ?>
