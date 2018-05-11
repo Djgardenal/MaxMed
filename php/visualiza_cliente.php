@@ -96,7 +96,7 @@
 			<?php } ?>
 		</div>
 		<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-		<a href="../php/atualiza_cliente.php">Atualizar Cliente</a>
+		<a href="../php/atualiza_cliente.php?id=<?php echo $_GET['id']; ?>">Atualizar Cliente <?php echo $_GET['id']; ?></a>
 	</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
