@@ -80,6 +80,7 @@ function exclui_cliente($id_cliente) {
   } else {
     return false;
   }
+	mysqli_close($connection);
 }
 
 function atualiza_cliente($id_cliente, $endereco_cliente, $telefone_cliente, $empresa_cliente, $email_cliente) {
@@ -92,6 +93,7 @@ function atualiza_cliente($id_cliente, $endereco_cliente, $telefone_cliente, $em
 	} else {
 		return false;
 	}
+	mysqli_close($connection);
 }
 
 
